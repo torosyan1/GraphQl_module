@@ -1,4 +1,4 @@
-import { User } from '../Database/models/user';
+import { User } from '../../../Database/models/user';
 
 export const updateUser = async (_, arg:any):Promise<object> => {
     try {

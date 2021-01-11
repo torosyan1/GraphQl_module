@@ -1,8 +1,8 @@
 import { createModule } from 'graphql-modules';
 import gql from 'graphql-tag';
 
-import Mutation from '../Mutation';
-import Query from '../Query'
+import Mutation from './Mutation';
+import Query from '../../Query'
 
 export const myModule = createModule({
   id: 'my-module',

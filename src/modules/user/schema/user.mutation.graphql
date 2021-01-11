@@ -1,0 +1,12 @@
+type Mutation {
+    deleteUser
+    createUser(firstName:String, lastName: String, age: Sting, email: String, password: String ): createUserReturningType
+}
+
+type createUserReturningType {
+    firstName: String,
+    lastName:String,
+    age: Int,
+    email: String
+    userId: String
+}

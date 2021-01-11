@@ -1,5 +1,5 @@
 import { GraphQLError } from 'graphql';
-import { User } from '../Database/models/user';
+import { User } from '../../../Database/models/user';
 
 export const createUser = async (_, arg:any) : Promise<object> => {
     try {
@@ -16,3 +16,10 @@ export const createUser = async (_, arg:any) : Promise<object> => {
         return e;
     }
 };
+
+
+
+
+
+
+modules/name/
