@@ -1,0 +1,6 @@
+  type Query {
+    hello: String!,
+    getUser(id:String): getUsers,
+    getAllUser: [getUsers],
+    deleteUser(id:String!):String!
+}

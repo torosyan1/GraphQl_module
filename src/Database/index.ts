@@ -7,6 +7,7 @@ import mongoose from 'mongoose';
             useNewUrlParser: true,
             useCreateIndex: true,
         })
+        console.log('db connect')
      }catch(error){
          return error
      }
