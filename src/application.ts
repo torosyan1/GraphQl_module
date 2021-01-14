@@ -1,8 +1,8 @@
 import { createApplication } from 'graphql-modules';
-import  { myModule} from './modules/user.module';
+import  { myModules } from './modulesValidation';
 
 export const application = createApplication({
-  modules: [myModule],
+  modules: [myModules()],
 });
 
 const mySchema = application.schema;

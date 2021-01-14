@@ -8,7 +8,7 @@ import Query from '../resolvers/query'
 const allTypes = fileLoader(path.join(__dirname, '../schema/**/*.graphql'));
 const mergedTypes = mergeTypes(allTypes);
 
-export const myModule = createModule({
+export const User = createModule({
   id: 'my-module',
   dirname: __dirname,
   typeDefs: gql`${mergedTypes}`,
