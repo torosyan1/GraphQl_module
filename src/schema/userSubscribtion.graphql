@@ -1,0 +1,10 @@
+type Users {
+    id: ID,
+    first_name: String,
+    last_name:String,
+    email: String,
+}
+
+type Subscription {
+   User : Users
+}

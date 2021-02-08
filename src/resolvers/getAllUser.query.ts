@@ -6,7 +6,7 @@ export const getAllUser= async (_, arg) : Promise<object> => {
         const user:object = await User.find({ });
         
         if (!user) return new GraphQLError('User not found!');
-console.log('aaa')
+
         return user;
 
     } catch (e) {

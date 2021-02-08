@@ -8,6 +8,8 @@ export const updateUser = async (_, arg:any):Promise<object> => {
             email: arg.email,
             password: arg.password
         });
+
+        
         return updateUser
     } catch (e) {
         return e;
