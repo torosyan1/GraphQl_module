@@ -1,10 +1,10 @@
 import './env'
 import { ApolloServer } from 'apollo-server';
 import { PubSub } from 'graphql-subscriptions';
-import mongodb, { MongoClient } from 'mongodb'
 
 import { application } from './application';
 import { Database } from './Database'
+import { subscribeDB } from './Database/subscribtion'
 
 export const pubsub = new PubSub();
 
@@ -23,18 +23,6 @@ const server = new ApolloServer({
 
 Database()
 
-const subscribeDB = async () => {
-  const client = await mongodb.MongoClient.connect(process.env.DB_URL);
-  const db = client.db('<dbname>');
-  db.collection('users').watch().
-    on('change', (data) => {
-      console.log(data['fullDocument'])
-      pubsub.publish('userTopic', {
-        User: data['fullDocument']
-      });
-    });
-
-}
 subscribeDB()
 
 server.listen().then(async ({ url }) => {

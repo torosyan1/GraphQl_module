@@ -18,7 +18,7 @@ export const User = createModule({
     Query,
     Mutation,
     Subscription: {
-      User: {
+      Subscription: {
           subscribe(parent, args, ctx, info) {
               return pubsub.asyncIterator('userTopic') 
           }

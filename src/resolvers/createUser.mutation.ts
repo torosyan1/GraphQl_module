@@ -10,9 +10,9 @@ export const createUser = async (_, arg:any) : Promise<object> => {
         if (user) return new GraphQLError('User alredy registred!');
         
         const newUser:object = await User.create(arg);
-        pubsub.publish('userTopic', {
-            User: newUser
-        });
+        // pubsub.publish('userTopic', {
+        //     User: newUser
+        // });
         return newUser;
 
     } catch (e) {

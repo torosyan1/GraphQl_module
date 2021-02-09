@@ -1,4 +1,5 @@
 type Users {
+    _id: ID,
     id: ID,
     first_name: String,
     last_name:String,
@@ -6,5 +7,5 @@ type Users {
 }
 
 type Subscription {
-   User : Users
+   Subscription : Users
 }
