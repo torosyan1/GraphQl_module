@@ -1,4 +1,5 @@
 import { GraphQLError } from 'graphql';
+import { pubsub } from '../server'
 import { User } from '../Database/models/user';
 
 export const createUser = async (_, arg:any) : Promise<object> => {
@@ -9,7 +10,9 @@ export const createUser = async (_, arg:any) : Promise<object> => {
         if (user) return new GraphQLError('User alredy registred!');
         
         const newUser:object = await User.create(arg);
-
+        // pubsub.publish('userTopic', {
+        //     User: newUser
+        // });
         return newUser;
 
     } catch (e) {
